@@ -1,0 +1,13 @@
+C:\Users\gcaballero\source\repos\ABM_v1\ABM_v1\bin\Debug\Test.exe
+C:\Users\gcaballero\source\repos\ABM_v1\ABM_v1\bin\Debug\Test.exe.config
+C:\Users\gcaballero\source\repos\ABM_v1\ABM_v1\obj\Debug\ABM_v1.csproj.AssemblyReference.cache
+C:\Users\gcaballero\source\repos\ABM_v1\ABM_v1\obj\Debug\ABM_v1.csproj.SuggestedBindingRedirects.cache
+C:\Users\gcaballero\source\repos\ABM_v1\ABM_v1\obj\Debug\Test.HolaMundo.resources
+C:\Users\gcaballero\source\repos\ABM_v1\ABM_v1\obj\Debug\Test.Login.resources
+C:\Users\gcaballero\source\repos\ABM_v1\ABM_v1\obj\Debug\Test.MenuPrincipal.resources
+C:\Users\gcaballero\source\repos\ABM_v1\ABM_v1\obj\Debug\Test.Properties.Resources.resources
+C:\Users\gcaballero\source\repos\ABM_v1\ABM_v1\obj\Debug\Test.SignIn.resources
+C:\Users\gcaballero\source\repos\ABM_v1\ABM_v1\obj\Debug\ABM_v1.csproj.GenerateResource.cache
+C:\Users\gcaballero\source\repos\ABM_v1\ABM_v1\obj\Debug\ABM_v1.csproj.CoreCompileInputs.cache
+C:\Users\gcaballero\source\repos\ABM_v1\ABM_v1\obj\Debug\Test.exe
+C:\Users\gcaballero\source\repos\ABM_v1\ABM_v1\obj\Debug\Test.pdb

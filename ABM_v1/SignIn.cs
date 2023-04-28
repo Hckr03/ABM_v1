@@ -30,6 +30,10 @@ namespace Test
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
+            //if (!valEmptyNull())
+            //{
+            //    return MessageBox.Show("No debe dejar campos vacios")
+            //}
             try
             {                
                 oracle.Open();
@@ -43,8 +47,6 @@ namespace Test
                 cmd.Parameters.Add("pi_password", OracleType.VarChar).Value = txtPassword.Text;
                 cmd.Parameters.Add("po_error_message", OracleType.VarChar, 1000).Direction = ParameterDirection.Output;
                 cmd.ExecuteNonQuery();
-                var outValue = cmd.Parameters["po_error_message"].Value;
-                MessageBox.Show(outValue.ToString());
             }
             catch(Exception ex)
             {
@@ -93,28 +95,6 @@ namespace Test
                 }
             }
         }
-        private void enableBtnSignUp()
-        {
-            string firtsName = txtFirstName.Text;
-            string lastName = txtLastName.Text;
-            string nickName = txtNickname.Text;
-            string mail = txtMail.Text;
-            string date = dateDob.Text;
-            string pass = txtPassword.Text;
-            string confirmPass = txtConfirmPass.Text;
-
-            if(string.IsNullOrEmpty(firtsName) || string.IsNullOrEmpty(lastName)
-                || string.IsNullOrEmpty(nickName) || string.IsNullOrEmpty(mail)
-                || string.IsNullOrEmpty(date) || string.IsNullOrEmpty(pass)
-                || string.IsNullOrEmpty(confirmPass) && !txtConfirmPass.Enabled)
-            {
-                btnSignUp.Enabled = false;
-            }
-            else
-            { 
-                btnSignUp.Enabled = true;
-            }
-        }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
@@ -125,5 +105,36 @@ namespace Test
                 txtConfirmPass.Clear();
             }
         }
+
+        //START FUNCTIONS
+        private void enableBtnSignUp()
+        {
+            if(string.IsNullOrEmpty(txtFirstName.Text) || string.IsNullOrEmpty(txtLastName.Text)
+                || string.IsNullOrEmpty(txtNickname.Text) || string.IsNullOrEmpty(txtMail.Text)
+                || string.IsNullOrEmpty(dateDob.Text) || string.IsNullOrEmpty(txtPassword.Text)
+                || string.IsNullOrEmpty(txtConfirmPass.Text) && !txtConfirmPass.Enabled)
+            {
+                btnSignUp.Enabled = false;
+            }
+            else
+            { 
+                btnSignUp.Enabled = true;
+            }
+        }
+
+        private Boolean valEmptyNull()
+        {
+            if (string.IsNullOrEmpty(txtFirstName.Text) || string.IsNullOrEmpty(txtLastName.Text)
+                || string.IsNullOrEmpty(txtNickname.Text) || string.IsNullOrEmpty(txtMail.Text)
+                || string.IsNullOrEmpty(dateDob.Text) || string.IsNullOrEmpty(txtPassword.Text)
+                || string.IsNullOrEmpty(txtConfirmPass.Text))
+            {
+                oracle.Open();
+                OracleCommand cmd = new OracleCommand(pkgName + "sp_create_user", oracle);
+                cmd.CommandType = CommandType.StoredProcedure;
+            }
+            return false;
+        }
+        //END FUNCTIONS
     }
 }
